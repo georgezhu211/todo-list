@@ -1,4 +1,4 @@
-import Project from "./project";
+import Project, { projectDOM } from "./project";
 
 const App = (() => {
   // test dummies
@@ -9,12 +9,17 @@ const App = (() => {
 
   const projects = [defaultProject, project1, project2, project3]
   let currentIndex = 0
-  // DOM
+  let currentProject = projects[currentIndex]
+  // project DOM
   const projectList = document.querySelector('.project-list')
   const projectForm = document.querySelector('.project-form')
   const projectInput = document.querySelector('.project-input')
   const projectDelete = document.querySelector('.project-delete')
-  // events
+  // todo DOM
+  const todoForm = document.querySelector('.todo-form')
+  const todoInput = document.querySelector('.todo-input')
+
+  // project events
   projectForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const projectTitle = projectInput.value
@@ -30,8 +35,23 @@ const App = (() => {
   })
   projectList.addEventListener('click', (e) => {
     currentIndex = +e.target.dataset.index
+    currentProject = projects[currentIndex]
+    projectDOM.render(currentProject)
+  })
+  // todo events
+  todoForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const todoName = todoInput.value
+    projectDOM.projectAddTodo(currentProject, todoName)
+    projectDOM.render(currentProject)
   })
   // methods
+
+  function initialize() {
+    render()
+    projectDOM.render(currentProject)
+  }
+
   function render() {
     projectList.innerHTML = ''
     projects.forEach((project) => {
@@ -56,10 +76,8 @@ const App = (() => {
   }
 
   return {
-    render,
-    createProject
+    initialize
   }
 })();
 
-App.render()
-App.createProject()
+App.initialize()
