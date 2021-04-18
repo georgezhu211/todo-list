@@ -1,0 +1,126 @@
+body, html {
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  background-image: linear-gradient(to top right, #027333, #325943);
+  color: #96dab3;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+      "banner banner"
+      "sidebar content"
+      "sidebar content";
+  grid-template-columns: 280px 1fr;
+  height: 100%;
+}
+
+.banner {
+  grid-area: banner;
+  border: none;
+  margin-top: 50px;
+  font-size: 48px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  margin-left: 50px;
+}
+
+.content {
+  grid-area: content;
+  margin: 0 50px;
+}
+
+.sidebar-container {
+  height: 700px;
+  border-right: 1px solid #0b140f;
+}
+
+.content-container {
+  height: 500px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  font-size: 36px;
+  text-align: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #0b140f;
+}
+/* LIST CSS */
+ul {
+  padding: 12px 0;
+}
+.project-list {
+  width: 120px;
+  margin: 0 auto;
+}
+
+.todo-list {
+  width: 60%;
+  margin: 0 auto;
+}
+
+/* LIST ITEM CSS */
+li {
+  text-decoration: underline;
+  padding: 5px;
+}
+
+.project-item {
+  text-align: right;
+}
+
+.todo-item {
+  padding: 10px 0 0 20px;
+}
+
+/* INPUT CSS */
+input {
+  height: 26px;
+  border: 1px solid #2fc26e;
+  font-size: 16px;
+  padding-left: 5px;
+}
+
+.project-input {
+  margin-top: 5px;
+  margin-left: 20px;
+  width: 120px;
+  height: 26px;
+  border: 1px solid #2fc26e;
+  font-size: 16px;
+  padding-left: 5px;
+}
+
+.todo-input {
+  width: 160px;
+}
+
+/* BUTTON CSS */
+.button {
+  width: 55px;
+  height: 30px;
+  background-color: #2fc26e;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+
+/* FORM CSS */
+form {
+  padding-top: 10px;
+  border-top: 1px solid #0b140f;
+}
+
+.project-form {
+  text-align: center;
+}
+
+.todo-form {
+  height: 40px;
+  width: 350px;
+  margin: 0 auto;
+}
