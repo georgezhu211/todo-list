@@ -68,16 +68,19 @@ li {
   cursor: pointer;
 }
 
-li:hover {
-  text-decoration: underline;
-}
-
 .project-item {
   text-align: right;
 }
 
+.project-item:hover {
+  text-decoration: underline;
+}
+
 .todo-item {
-  padding: 10px 0 0 20px;
+  display: flex;
+  height: 20px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* INPUT CSS */
@@ -158,4 +161,9 @@ form {
   height: 40px;
   width: 350px;
   margin: 0 auto;
+}
+
+/* MATERIAL ICONs */
+.material-icons {
+  border: 1px solid black;
 }
