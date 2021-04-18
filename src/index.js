@@ -42,8 +42,10 @@ const App = (() => {
   todoForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const todoName = todoInput.value
+    if(invalidInput(todoName)) return
     projectDOM.projectAddTodo(currentProject, todoName)
     projectDOM.render(currentProject)
+    todoInput.value = ""
   })
   // methods
 

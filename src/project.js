@@ -1,4 +1,4 @@
-import Todo from "./todo";
+import Todo, { todoDOM } from "./todo";
 
 export default class Project {
   constructor(title) {
@@ -20,9 +20,7 @@ const projectDOM = (() => {
     projectTitle.textContent = project.title
     todoList.innerHTML = ""
     project.todos.forEach((todo) => {
-      const todoItem = document.createElement('li')
-      todoItem.setAttribute('data-index', project.todos.indexOf(todo))
-      todoItem.textContent = todo.title
+      const todoItem = todoDOM.createTodo(todo.title)
       todoList.appendChild(todoItem)
     })
   }
