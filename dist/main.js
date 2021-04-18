@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+eval("\nconst App = (() => {\n  const projects = []\n\n  const projectList = document.querySelector('.project-list')\n\n  function render() {\n    console.log(projectList)\n  }\n\n  return {\n    render\n  }\n})();\n\nApp.render()\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
 
 /***/ })
 
