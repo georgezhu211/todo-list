@@ -1,26 +1,29 @@
 export default class Todo {
-  constructor(title) {
+  constructor(title, complete) {
     this.title = title
+    this.complete = false;
   }
 }
 
 const todoDOM = (() => {
   const todoList = document.querySelector('.todoList')
-  
 
-  function createTodo(todoName) {
+  function createTodo(todo) {
     const todoItem = document.createElement('li')
     todoItem.className = 'todo-item'
     const p = document.createElement('p')
     p.className = 'todo-text'
-    p.textContent= todoName
+    p.textContent= todo.title
+    if(todo.complete) {
+      p.style.textDecoration = 'line-through'
+    }
     const iconDiv = document.createElement('div')
     iconDiv.className = 'todo-icons'
     const checkButton = document.createElement('span')
-    checkButton.className = 'material-icons'
+    checkButton.classList.add('material-icons')
     checkButton.textContent = 'check'
     const deleteButton = document.createElement('span')
-    deleteButton.className = 'material-icons'
+    deleteButton.classList.add('material-icons')
     deleteButton.textContent = 'clear'
     iconDiv.appendChild(checkButton)
     iconDiv.appendChild(deleteButton)

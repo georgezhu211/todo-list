@@ -47,6 +47,28 @@ const App = (() => {
     projectDOM.render(currentProject)
     todoInput.value = ""
   })
+
+  document.addEventListener('click', (e) => {
+    if(e.target && e.target.textContent == 'check') {
+      const todoIndex = e.target.parentNode.parentNode.dataset.index
+      const todo = currentProject.todos[todoIndex]
+      console.log(todo.complete)
+      if(todo.complete) {
+        todo.complete = false
+      } else {
+        todo.complete = true
+      }
+    }
+    projectDOM.render(currentProject)
+  })
+
+  document.addEventListener('click', (e) => {
+    if(e.target && e.target.textContent == 'clear') {
+      const todoIndex = e.target.parentNode.parentNode.dataset.index
+      currentProject.todos.splice(todoIndex, 1)
+    }
+    projectDOM.render(currentProject)
+  })
   // methods
 
   function initialize() {

@@ -16,11 +16,13 @@ const projectDOM = (() => {
   const projectTitle = document.querySelector('.project-title')
   const todoList = document.querySelector('.todo-list')
 
+
   function render(project) {
     projectTitle.textContent = project.title
     todoList.innerHTML = ""
     project.todos.forEach((todo) => {
-      const todoItem = todoDOM.createTodo(todo.title)
+      const todoItem = todoDOM.createTodo(todo)
+      todoItem.setAttribute('data-index', project.todos.indexOf(todo))
       todoList.appendChild(todoItem)
     })
   }
