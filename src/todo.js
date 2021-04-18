@@ -1,7 +1,7 @@
 export default class Todo {
-  constructor(title, complete) {
+  constructor(title, complete=false) {
     this.title = title
-    this.complete = false;
+    this.complete = complete;
   }
 }
 

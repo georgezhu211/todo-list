@@ -3,7 +3,7 @@ import Todo, { todoDOM } from "./todo";
 export default class Project {
   constructor(title) {
     this.title = title
-    this.todos = [new Todo('todo1'), new Todo('todo2'), new Todo('todo3')]
+    this.todos = []
   }
 
   add(todo) {

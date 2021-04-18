@@ -1,13 +1,11 @@
 import Project, { projectDOM } from "./project";
+import Todo from "./todo";
 
 const App = (() => {
   // test dummies
-  const defaultProject = new Project('Default Project')
-  const project1 = new Project('project1')
-  const project2 = new Project('project2')
-  const project3 = new Project('project3')
+  const defaultProject = new Project('Today')
 
-  const projects = [defaultProject, project1, project2, project3]
+  let projects = [defaultProject]
   let currentIndex = 0
   let currentProject = projects[currentIndex]
   // project DOM
@@ -28,15 +26,18 @@ const App = (() => {
     projects.push(newProject)
     projectInput.value = ""
     render()
+    save()
   })
   projectDelete.addEventListener('click', (e) => {
     projects.splice(currentIndex, 1)
     render()
+    save()
   })
   projectList.addEventListener('click', (e) => {
     currentIndex = +e.target.dataset.index
     currentProject = projects[currentIndex]
     projectDOM.render(currentProject)
+    save()
   })
   // todo events
   todoForm.addEventListener('submit', (e) => {
@@ -46,13 +47,13 @@ const App = (() => {
     projectDOM.projectAddTodo(currentProject, todoName)
     projectDOM.render(currentProject)
     todoInput.value = ""
+    save()
   })
 
   document.addEventListener('click', (e) => {
     if(e.target && e.target.textContent == 'check') {
       const todoIndex = e.target.parentNode.parentNode.dataset.index
       const todo = currentProject.todos[todoIndex]
-      console.log(todo.complete)
       if(todo.complete) {
         todo.complete = false
       } else {
@@ -60,6 +61,7 @@ const App = (() => {
       }
     }
     projectDOM.render(currentProject)
+    save()
   })
 
   document.addEventListener('click', (e) => {
@@ -68,12 +70,14 @@ const App = (() => {
       currentProject.todos.splice(todoIndex, 1)
     }
     projectDOM.render(currentProject)
+    save()
   })
   // methods
 
   function initialize() {
+    load()
     render()
-    projectDOM.render(currentProject)
+    projectDOM.render(projects[0])
   }
 
   function render() {
@@ -97,6 +101,27 @@ const App = (() => {
       return true
     }
     return false
+  }
+
+  function save() {
+    localStorage["projects"] = JSON.stringify(projects)
+  }
+
+  function load() {
+    projects = deserialize(JSON.parse(localStorage["projects"]))
+  }
+
+  function deserialize(projects) {
+    const temp = []
+    projects.forEach((project) => {
+      const newProject = new Project(project.title)
+      project.todos.forEach((todo) => {
+        const newTodo = new Todo(todo.title, todo.complete)
+        newProject.todos.push(newTodo)
+      })
+      temp.push(newProject)
+    })
+    return temp
   }
 
   return {

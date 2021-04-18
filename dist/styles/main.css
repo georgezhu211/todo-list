@@ -55,11 +55,13 @@ ul {
 .project-list {
   width: 120px;
   margin: 0 auto;
+  min-height: 200px;
 }
 
 .todo-list {
   width: 60%;
   margin: 0 auto;
+  min-height: 200px;
 }
 
 /* LIST ITEM CSS */
@@ -134,10 +136,12 @@ input:focus {
   border-radius: 5px;
   cursor: pointer;
   outline: none;
-  border: none;
-  background-color: transparent;
   color: #A9D9BA;
   font-size: 18px;
+  border: 1px solid red;
+  background-color: rgb(212, 69, 69);
+  float: right;
+  margin-top: 20px;
 }
 
 .project-delete:hover {
@@ -166,4 +170,20 @@ form {
 /* MATERIAL ICONs */
 .material-icons {
   border: 1px solid black;
+  border-color: #A9D9BA;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.material-icons:active {
+  transform: scale(1.1);
+}
+
+.material-icons:nth-child(odd):hover {
+  color: #359235;
+  border-color: #359235;
+}
+
+.material-icons:nth-child(even):hover {
+  color: #c23434;
+  border-color: #c23434;
 }
