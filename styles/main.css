@@ -180,10 +180,8 @@ form {
 
 .material-icons:nth-child(odd):hover {
   color: #359235;
-  border-color: #359235;
 }
 
 .material-icons:nth-child(even):hover {
   color: #c23434;
-  border-color: #c23434;
 }
