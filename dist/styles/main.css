@@ -1,18 +1,21 @@
-body, html {
+body,
+html {
   height: 100vh;
   font-family: 'Open Sans', sans-serif;
   background-image: linear-gradient(to top right, #027333, #325943);
-  color: #A9D9BA;
+  color: #d9bd32;
 }
 
 .grid-container {
   display: grid;
-  grid-template-areas: 
-      "banner banner"
-      "sidebar content"
-      "sidebar content";
+  grid-template-areas:
+    'banner banner'
+    'sidebar content'
+    'sidebar content';
   grid-template-columns: 280px 1fr;
   height: 100%;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .banner {
@@ -34,7 +37,7 @@ body, html {
 
 .sidebar-container {
   height: 700px;
-  border-right: 1px solid #D9BD32;
+  border-right: 1px solid #d9bd32;
 }
 
 .content-container {
@@ -43,10 +46,10 @@ body, html {
 }
 
 header {
-  font-size: 36px;
+  font-size: 38px;
   text-align: center;
   padding: 12px 0;
-  border-bottom: 1px solid #D9BD32;
+  border-bottom: 1px solid #d9bd32;
 }
 /* LIST CSS */
 ul {
@@ -72,6 +75,7 @@ li {
 
 .project-item {
   text-align: right;
+  font-size: 22px;
 }
 
 .project-item:hover {
@@ -83,6 +87,7 @@ li {
   height: 20px;
   align-items: center;
   justify-content: space-between;
+  font-size: 20px;
 }
 
 /* INPUT CSS */
@@ -136,7 +141,7 @@ input:focus {
   border-radius: 5px;
   cursor: pointer;
   outline: none;
-  color: #A9D9BA;
+  color: #a9d9ba;
   font-size: 18px;
   border: 1px solid red;
   background-color: rgb(212, 69, 69);
@@ -154,7 +159,7 @@ input:focus {
 /* FORM CSS */
 form {
   padding-top: 10px;
-  border-top: 1px solid #D9BD32;
+  border-top: 1px solid #d9bd32;
 }
 
 .project-form {
@@ -170,7 +175,7 @@ form {
 /* MATERIAL ICONs */
 .material-icons {
   border: 1px solid black;
-  border-color: #A9D9BA;
+  border-color: #a9d9ba;
   border-radius: 50%;
   margin-right: 5px;
 }

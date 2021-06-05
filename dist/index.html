@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="styles/reset.css">
-  <link rel="stylesheet" href="styles/main.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-  <title>To-Do App</title>
-</head>
-<body>
-  <div class="grid-container">
-    <header class="banner">My Todo List</header>
-    <aside class="sidebar">
-      <div class="sidebar-container">
-        <header>Projects</header>
-        <ul class="project-list">
-          <!-- projects go here -->
-        </ul>
-        <form action="" class="project-form">
-          <label for="">New Project:</label><br>
-          <input type="text" class="project-input" placeholder="project name">
-          <button class="project-button button">create</button>
-        </form>
-      </div>
-    </aside>
-    <main class="content">
-      <div class="content-container">
-        <header class="project-title">Current Project</header>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>To-Do App</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header class="banner">My Todo List</header>
+      <aside class="sidebar">
+        <div class="sidebar-container">
+          <header>Projects</header>
+          <ul class="project-list">
+            <!-- projects go here -->
+          </ul>
+          <form action="" class="project-form">
+            <label for="">New Project:</label><br />
+            <input
+              type="text"
+              class="project-input"
+              placeholder="project name"
+            />
+            <button class="project-button button">Create</button>
+          </form>
+        </div>
+      </aside>
+      <main class="content">
+        <div class="content-container">
+          <header class="project-title">Current Project</header>
           <ul class="todo-list">
             <!-- todos go here -->
           </ul>
           <form action="" class="todo-form">
             <label for="">New Todo:</label>
-            <input type="text" class="todo-input" placeholder="todo name">
-            <button class="todo-button button">create</button>
+            <input type="text" class="todo-input" placeholder="todo name" />
+            <button class="todo-button button">Add</button>
           </form>
-      </div>
-      <button class="project-delete">DETELE PROJECT</button>
-    </main>
-  </div>
-  <script src="main.js"></script>
-</body>
+        </div>
+        <button class="project-delete">DETELE PROJECT</button>
+      </main>
+    </div>
+    <script src="main.js"></script>
+  </body>
 </html>
